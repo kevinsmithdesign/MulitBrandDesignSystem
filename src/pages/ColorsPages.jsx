@@ -462,7 +462,7 @@ const ColorPage = () => {
             </Typography>
             <Grid container spacing={2} mb={3}>
               {colors.map(({ title, backgroundColor, token }, index) => (
-                <Grid size={{ xs: 12, sm: 6, md: 6, lg: 4 }} key={index}>
+                <Grid size={{ xs: 12, sm: 6, md: 4, lg: 4 }} key={index}>
                   <ColorCard
                     title={title}
                     backgroundColor={backgroundColor}
@@ -488,7 +488,7 @@ const ColorPage = () => {
       </Typography>
       <Grid container spacing={2} mb={6}>
         {colorUsage.map(({ title, subTitle, usage, backgroundColor }) => (
-          <Grid size={{ xs: 12, sm: 6, md: 6, lg: 4 }}>
+          <Grid size={{ xs: 12, sm: 6, md: 4, lg: 4 }}>
             <ColorUsageCard
               title={title}
               subTitle={subTitle}
@@ -504,7 +504,7 @@ const ColorPage = () => {
       <Grid container spacing={2} mb={6}>
         {secondaryColorUsage.map(
           ({ title, subTitle, usage, backgroundColor }) => (
-            <Grid size={{ xs: 12, sm: 6, md: 6, lg: 4 }}>
+            <Grid size={{ xs: 12, sm: 6, md: 4, lg: 4 }}>
               <ColorUsageCard
                 title={title}
                 subTitle={subTitle}
@@ -523,7 +523,7 @@ const ColorPage = () => {
         {designPrinciples.map(({ title, description }, index) => (
           <Grid
             key={index}
-            size={{ xs: 12, sm: 6, md: 6, lg: 4 }}
+            size={{ xs: 12, sm: 6, md: 4, lg: 4 }}
             display="flex"
             alignItems="stretch"
           >
