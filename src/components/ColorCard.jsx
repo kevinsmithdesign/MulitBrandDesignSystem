@@ -46,7 +46,7 @@ const ColorCard = ({
           </IconButton>
         </Tooltip>
       </Box>
-      <Box sx={{ py: 3, px: 3.5 }}>
+      <Box sx={{ py: 2, px: 2.5 }}>
         <Typography variant="h6" fontWeight="bold" mb={0.5}>
           {title}
         </Typography>
