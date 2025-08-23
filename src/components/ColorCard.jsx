@@ -24,7 +24,7 @@ const ColorCard = ({
     >
       <Box
         sx={{
-          height: "220px",
+          height: "150px",
           background: backgroundColor,
           borderRadius: "10px 10px 0px 0px",
           width: "100%",

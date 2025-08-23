@@ -397,7 +397,7 @@ const ColorPage = () => {
   return (
     <Stack sx={{ maxWidth: "1120px", mb: 8 }}>
       <Grid container spacing={2}>
-        <Grid size={{ xs: 12, sm: 6 }}>
+        <Grid size={{ xs: 12, sm: 4 }}>
           <Typography variant="h2" fontWeight="bold" mb={{ xs: 1, sm: 2 }}>
             Colors
           </Typography>
