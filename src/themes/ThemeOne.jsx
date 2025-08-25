@@ -230,41 +230,50 @@ const theme = createTheme({
     divider: semanticTokens.border.primary,
   },
   typography: {
+    fontFamily: '"Inter", "Helvetica", "Arial", sans-serif',
     h1: {
       fontSize: "46px",
       fontWeight: "normal",
       color: semanticTokens.text.primary,
+      fontFamily: '"Inter", "Helvetica", "Arial", sans-serif',
     },
     h2: {
       fontSize: "36px",
       fontWeight: "normal",
       color: semanticTokens.text.primary,
+      fontFamily: '"Inter", "Helvetica", "Arial", sans-serif',
     },
     h3: {
       fontSize: "32px",
       fontWeight: "normal",
       color: semanticTokens.text.primary,
+      fontFamily: '"Inter", "Helvetica", "Arial", sans-serif',
     },
     h4: {
       fontSize: "24px",
-      fontWeight: "bold",
+      fontWeight: "normal",
       color: semanticTokens.text.primary,
+      fontFamily: '"Inter", "Helvetica", "Arial", sans-serif',
     },
     h5: {
       fontSize: "20px",
-      fontWeight: "bold",
+      fontWeight: "normal",
       color: semanticTokens.text.primary,
+      fontFamily: '"Inter", "Helvetica", "Arial", sans-serif',
     },
     h6: {
       fontSize: "16px",
       fontWeight: "bold",
       color: semanticTokens.text.primary,
+      fontFamily: '"Inter", "Helvetica", "Arial", sans-serif',
     },
     body1: {
       color: semanticTokens.text.primary,
+      fontFamily: '"Inter", "Helvetica", "Arial", sans-serif',
     },
     body2: {
       color: semanticTokens.text.secondary,
+      fontFamily: '"Inter", "Helvetica", "Arial", sans-serif',
     },
   },
   components: {

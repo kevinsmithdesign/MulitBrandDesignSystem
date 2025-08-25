@@ -18,6 +18,8 @@ export const ThemeProviderDesignSystem = ({ children }) => {
         return ThemeTwo;
       case "Network Solutions":
         return ThemeThree;
+      case "Domain.com":
+        return ThemeFour;
       default:
         return ThemeFour;
     }

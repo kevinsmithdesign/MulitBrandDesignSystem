@@ -1,9 +1,63 @@
 import React from "react";
 import { Stack, Typography, Tabs, Tab, Box } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
+import { useTheme as useCustomTheme } from "../themes/ThemeContext";
 import CodeSnippet from "../components/CodeSnippet";
 import Grid from "@mui/material/Grid";
 import UsageCard from "../components/UsageCard";
+
+// Brand-specific font configurations
+const brandFontConfig = {
+  Bluehost: {
+    fontName: "Inter",
+    weights: [
+      { weight: 300, label: "Light" },
+      { weight: 400, label: "Regular" },
+      { weight: 500, label: "Medium" },
+      { weight: 600, label: "Semi Bold" },
+      { weight: 700, label: "Bold" },
+      { weight: 800, label: "Extra Bold" },
+    ],
+    description:
+      "Inter is a carefully crafted typeface designed for computer screens. With excellent legibility at small sizes and a modern, clean aesthetic, Inter enhances readability across digital interfaces while maintaining professional appeal for web hosting services.",
+  },
+  HostGator: {
+    fontName: "Poppins",
+    weights: [
+      { weight: 300, label: "Light" },
+      { weight: 400, label: "Regular" },
+      { weight: 500, label: "Medium" },
+      { weight: 600, label: "Semi Bold" },
+      { weight: 700, label: "Bold" },
+      { weight: 800, label: "Extra Bold" },
+    ],
+    description:
+      "Poppins is a geometric sans-serif typeface that brings a friendly, approachable feel to digital experiences. Its rounded characters and excellent readability make it perfect for creating welcoming, accessible web hosting interfaces that put users at ease.",
+  },
+  "Network Solutions": {
+    fontName: "Schubsted Grotesk",
+    weights: [
+      { weight: 400, label: "Regular" },
+      { weight: 500, label: "Medium" },
+      { weight: 600, label: "Semi Bold" },
+      { weight: 700, label: "Bold" },
+    ],
+    description:
+      "Schubsted Grotesk is a contemporary grotesque typeface that combines classic proportions with modern refinement. Its strong, authoritative presence conveys trust and reliability, making it ideal for enterprise-level network and domain services.",
+  },
+  "Domain.com": {
+    fontName: "Helvetica",
+    weights: [
+      { weight: 300, label: "Light" },
+      { weight: 400, label: "Regular" },
+      { weight: 500, label: "Medium" },
+      { weight: 600, label: "Semi Bold" },
+      { weight: 700, label: "Bold" },
+    ],
+    description:
+      "Helvetica is the gold standard of Swiss typography, offering unparalleled clarity and neutrality. Its timeless design and exceptional legibility across all sizes make it the perfect choice for domain services, ensuring clear communication without distraction.",
+  },
+};
 
 const typographyVariants = [
   {
@@ -109,6 +163,9 @@ function a11yProps(index) {
 
 const TypographyPage = () => {
   const theme = useTheme();
+  const { themeName } = useCustomTheme();
+  const currentFontConfig =
+    brandFontConfig[themeName] || brandFontConfig["Bluehost"];
 
   const [value, setValue] = React.useState(0);
 
@@ -282,34 +339,24 @@ const TypographyPage = () => {
           }}
         >
           <Typography fontWeight="bold" variant="h4" mb={3}>
-            Roboto
+            {currentFontConfig.fontName}
           </Typography>
           <Stack flexDirection="row" gap={4} mb={4}>
-            <Typography fontWeight="100" variant="body1">
-              Light
-            </Typography>
-            <Typography fontWeight="300" variant="body1">
-              Regular
-            </Typography>
-            <Typography fontWeight="500" variant="body1">
-              Medium
-            </Typography>
-            <Typography fontWeight="600" variant="body1">
-              Semi
-            </Typography>
-            <Typography fontWeight="800" variant="body1">
-              Bold
-            </Typography>
+            {currentFontConfig.weights.map((weightConfig, index) => (
+              <Typography
+                key={index}
+                fontWeight={weightConfig.weight}
+                variant="body1"
+              >
+                {weightConfig.label}
+              </Typography>
+            ))}
           </Stack>
 
           <Grid container spacing={6}>
             <Grid size={{ xs: 12, md: 7 }}>
               <Typography variant="body2">
-                Built on systematic type scales, our typography creates clear
-                hierarchies from single screens to complex applications. Each
-                type style serves a specific purpose, from communicating content
-                structure to enhancing readability, ensuring information is
-                accessible to all users.
+                {currentFontConfig.description}
               </Typography>
             </Grid>
             <Grid
@@ -335,11 +382,9 @@ const TypographyPage = () => {
                   },
                 }}
               >
-                <img
-                  src="https://assets.codepen.io/2392702/Aa.svg"
-                  alt=""
-                  style={{ width: "300px", height: "auto" }}
-                />
+                <Typography variant="h1" fontSize={"200px"}>
+                  Aa
+                </Typography>
               </Box>
             </Grid>
           </Grid>
