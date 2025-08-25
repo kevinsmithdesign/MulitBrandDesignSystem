@@ -68,10 +68,11 @@ const WhiteLabelContent = () => {
           flexDirection="row"
           sx={{ maxWidth: "1430px", padding: "16px 24px" }}
         >
-          <Stack sx={{ flex: 1 }}>
+          <Stack sx={{ flex: 1, display: "flex", justifyContent: "center" }}>
             <Typography
               sx={{
                 fontSize: { xs: "18px", sm: "24px" },
+
                 fontWeight: "bold",
                 color: theme.palette.primary.contrastText,
               }}

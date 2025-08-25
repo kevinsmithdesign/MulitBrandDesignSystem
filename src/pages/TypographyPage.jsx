@@ -324,11 +324,6 @@ const TypographyPage = () => {
       </Tabs>
 
       <CustomTabPanel value={value} index={0}>
-        {/* <DesignSystemTitle
-          atomicTitle="DESIGN TOKENS"
-          sectionTitle="Typography"
-          sectionDescription="Typography system establishes a clear hierarchy and readability throughout the product by defining font styles, sizes, weights, and spacing. It includes guidelines for headings, body text, captions, and other text elements, ensuring consistency in both desktop and mobile layouts. The system enhances the user experience by creating a visual rhythm, improving legibility, and supporting the overall tone and personality of the brand."
-        /> */}
         <Box
           sx={{
             background: "#fff",
@@ -338,7 +333,7 @@ const TypographyPage = () => {
             mb: 4,
           }}
         >
-          <Typography fontWeight="bold" variant="h4" mb={3}>
+          {/* <Typography fontWeight="bold" variant="h4" mb={3}>
             {currentFontConfig.fontName}
           </Typography>
           <Stack flexDirection="row" gap={4} mb={4}>
@@ -351,38 +346,46 @@ const TypographyPage = () => {
                 {weightConfig.label}
               </Typography>
             ))}
-          </Stack>
+          </Stack> */}
 
           <Grid container spacing={6}>
             <Grid size={{ xs: 12, md: 7 }}>
+              <Typography fontWeight="bold" variant="h4" mb={3}>
+                {currentFontConfig.fontName}
+              </Typography>
+              <Stack flexDirection={{ xs: "column", md: "row" }} gap={4} mb={4}>
+                {currentFontConfig.weights.map((weightConfig, index) => (
+                  <Typography
+                    key={index}
+                    fontWeight={weightConfig.weight}
+                    variant="body1"
+                  >
+                    {weightConfig.label}
+                  </Typography>
+                ))}
+              </Stack>
               <Typography variant="body2">
                 {currentFontConfig.description}
               </Typography>
             </Grid>
-            <Grid
-              size={{ xs: 0, md: 5 }}
-              // sx={{
-              //   display: {
-              //     xs: "none", // Hide on extra small screens
-              //     sm: "none", // Hide on small screens
-              //     md: "block", // Hide on medium screens
-              //     lg: "block", // Show on large screens and above
-              //   },
-              // }}
-            >
+            <Grid size={{ xs: 12, md: 5 }}>
               <Box
                 sx={{
-                  position: "absolute",
-                  top: 60,
                   display: {
                     xs: "none", // Hide on extra small screens
                     sm: "none", // Hide on small screens
-                    md: "block", // Hide on medium screens
+                    md: "none", // Hide on medium screens
                     lg: "block", // Show on large screens and above
                   },
                 }}
               >
-                <Typography variant="h1" fontSize={"200px"}>
+                <Typography
+                  variant="h1"
+                  fontSize={"200px"}
+                  lineHeight={"200px"}
+                  sx={{ padding: 0, margin: 0 }}
+                  fontWeight="bold"
+                >
                   Aa
                 </Typography>
               </Box>
