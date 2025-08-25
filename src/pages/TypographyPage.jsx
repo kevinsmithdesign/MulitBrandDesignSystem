@@ -353,7 +353,12 @@ const TypographyPage = () => {
               <Typography fontWeight="bold" variant="h4" mb={3}>
                 {currentFontConfig.fontName}
               </Typography>
-              <Stack flexDirection={{ xs: "column", md: "row" }} gap={4} mb={4}>
+              <Stack
+                flexDirection="row"
+                sx={{ display: { xs: "none", lg: "flex" } }}
+                gap={4}
+                mb={4}
+              >
                 {currentFontConfig.weights.map((weightConfig, index) => (
                   <Typography
                     key={index}
